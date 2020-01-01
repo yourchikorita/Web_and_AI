@@ -1,0 +1,29 @@
+ @import url('https://fonts.googleapis.com/css?family=Do+Hyeon&display=swap');
+body{
+    background-color:#98a2a329;
+    font-family: 'Do Hyeon', sans-serif;
+}
+
+
+.chat-display{
+    height: 130px;
+    background-color: transparent;
+   
+}
+button{
+    margin: 5px;
+}
+.btn.btn-info{
+    background-color:#184fea5e;
+    border-color:white;
+}
+li{
+    list-style: none;
+}
+#guide_context{
+    padding-left: 5%;
+    padding-right: 5%;
+}
+.wave{
+    margin: 80px auto
+}
