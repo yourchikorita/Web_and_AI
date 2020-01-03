@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>login</title>
+</head>
+<body>
+
+
+
+    <div>
+        <h1>using templates..</h1>
+        <p>
+         this is login page...
+        </p>
+        <p>
+            {{myList}}
+        </p>
+        <p>
+            {{myDict}}
+        </p>
+        <h3> set (define variable)  </h3>
+            {% set menu="pizza" %}
+            {{menu}}
+        <h3> list items </h3>
+             <p>{{myList[2]}}</p>
+        <hr/>    
+        <h3> list for </h3>
+        <ul>
+            {% for ml in myList %}
+            <li>{{ml}}</li>
+            {% endfor %}
+
+        </ul>
+        <h3> dict for </h3>
+        <p>
+            {% for key, value in myDict.items() %}
+            <dt>{{key}} : {{value}}</dt>
+            {% endfor %}
+        </p>
+        <hr/>
+        <h3>if else </h3>
+        {% if myList|length > 5 %}
+        <p>myList 의 길이는 5보다 큽니다.</p>
+        <p>myList의 길이는 : {{myList|length}} 입니다.</p>
+        {% else %}
+        <p>myList의 길이는 5보다 작습니다.</p>
+        {% endif %}
+
+        
+       
+        
+
+    </div>
+</body>
+</html>

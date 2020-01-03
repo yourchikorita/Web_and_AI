@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>step1</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div>
+        <!-- 1. text, link, li -->
+        <h1> CSS Precedence Rules</h1>
+        <p id="rules_intro">When the browser needs to resolve what styles to apply to a given HTML element, it uses a set of CSS
+            precedence rules.
+            Given these rules, the browser can determine what styles to apply. The rules are:
+        </p>
+
+        <ol>
+            <li>!important after CSS properties.</li>
+            <li>Specificity of CSS rule selectors.</li>
+            <li>Sequence of declaration.</li>
+
+        </ol>
+        <p> I will explain what these rules mean in the following sections.
+            Note, that CSS precedence happens at CSS property level.
+            Thus, if two CSS rules target the same HTML element, and the first CSS rule takes precedence over the
+            second,
+            then all CSS properties specified in the first CSS rule takes precedence over the CSS properties declared in
+            the second rule.
+            However, if the second CSS rule contains CSS properties that are not specified in the first CSS rule,
+            then these are still applied. The CSS rules are combined - not overriding each other.
+            document from http://tutorials.jenkov.com/css/precedence.html
+        </p>
+    </div>
+
+
+
+    <div>
+        <!-- 2. input,button  -->
+        name : <input type="text" name="name" value=""><br/>
+        pwd : <input type="password" name="pwd" value=""><br/>
+        <input type="submit" value="Submit">
+        <!-- 주석입니다. -->
+    </div>
+
+
+
+    <div>
+        <!-- 3. image -->
+        <div class="logo_img">
+            <img src="img/html_green.png" alt="html_image">
+        </div>
+        <div class="logo_img">
+            <img src="img/css3_logo.png" alt="css_image">
+        </div>
+        
+    </div>
+
+
+
+    <div>
+        <!-- 4. video -->
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/SC2VlVHgvGc" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <!-- https://www.youtube.com/watch?v=SC2VlVHgvGc -->
+    </div>
+
+
+</body>
+
+</html>

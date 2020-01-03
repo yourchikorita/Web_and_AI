@@ -1,0 +1,52 @@
+
+.login{
+    /* background-color: #08152663; */
+    height: 300px;
+    width:300px;
+    padding: 30px;
+    margin: auto;
+
+    top:0; 
+    bottom:0; 
+    left:0; 
+    right:0;
+    position:absolute;
+}
+.login button{
+   
+    
+    border-color: transparent;
+    width: 40%;
+    background-color: #01798d;
+}
+input {
+    margin: 5px;
+}
+h1{
+    color: white;
+    margin-bottom: 30px;
+}
+
+
+
+
+.register{
+    background-color: #08152663;
+    height: 350px;
+    width:300px;
+    padding: 30px;
+    margin: auto;
+
+    top:0; 
+    bottom:0; 
+    left:0; 
+    right:0;
+    position:absolute;
+}
+.register button{
+   
+    
+    border-color: transparent;
+    width: 40%;
+    background-color: #01798d;
+}

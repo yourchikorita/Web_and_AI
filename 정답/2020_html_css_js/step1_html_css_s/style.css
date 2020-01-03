@@ -1,0 +1,12 @@
+/* cf. https://www.w3schools.com/css/default.asp */
+body{
+    background-color: grey;
+}
+
+#rules_intro{
+    color: red;
+}
+
+.logo_img{
+    text-align: center;
+}

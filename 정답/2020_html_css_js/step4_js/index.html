@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <h1 id="first_heading">Studying javascript</h1>
+
+
+    <!-- 1. this.innerHTML  -->
+    <!-- js 의 이벤트 https://www.w3schools.com/jsref/dom_obj_event.asp -->
+   <h2 onclick="this.innerHTML ='Ooops!' ">Click on this Text!</h2>
+    <hr/>
+    <!-- 2 Date() -->
+   <button onclick="document.getElementById('whattime').innerHTML = Date()" > 
+    The time is? </button>
+    <h3 id="whattime"></h3>
+    <hr/>
+
+    <!-- 3 oninput -->
+    <input type="text" id="myInput" oninput="myFunction()">
+    <p id="demo"></p>
+
+    <script>
+        function myFunction(){
+            var x = document.getElementById("myInput").value;
+            document.getElementById("demo").innerHTML = "You wrote:"+ x;
+        }
+    </script>
+        
+
+
+    <!-- 브라우저에서 콘솔에서 실행 -->
+    <!-- JavaScript Window - The Browser Object Model  (BOM) -->
+    <!-- 
+    [window]
+    window.alert()
+    window.open()
+    window.close()
+    window.alert()
+    window.document.getElementById("first_heading").innerHTML="자바스크립트 공부"
+
+    [screen]
+    screen.width
+    screen.height
+    document.getElementById("first_heading").innerHTML ="Screen Width: " + screen.width; -->
+   
+
+    <!-- SpeechSynthesis : Web Speech API, 텍스트를 소리로 바꿔주는 TTS API
+    (브라우저에 내장되는 API이므로 무료로 쉽게 사용 가능)
+    지원가능한 브라우저 참고 https://developer.mozilla.org/en-US/docs/Web/API/Web_Speech_API  
+    var synthesis = window.speechSynthesis
+    var utterance = new SpeechSynthesisUtterance()
+    utterance.lang='ko-KR'
+    utterance.text='청포도와 요거트가 만난 건강한 견과류'
+    synthesis.speak(utterance)
+
+    -->
+</body>
+
+</html>
