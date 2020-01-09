@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>MNIST classifier demo</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="stylesheet" href="../static/css/bootstrap/bootstrap.min.css">
+    <!--  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">-->
+
+    <link rel="stylesheet" href="../static/css/signature_pad.css">
+    <link rel="stylesheet" href="../static/css/socialicons.css">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+
+</head>
+
+<body>
+    <div class="container-fluid">
+
+        <div id="signature-pad" class="signature-pad jumbotron">
+
+            <div style="margin:0.2em;" id="result">
+
+                <div class="alert alert-success" role="alert">
+                    <h5 class="alert-heading">Draw a digit</h5>
+                </div>
+
+            </div>
+
+            <div class="signature-pad--body">
+                <canvas></canvas>
+            </div>
+            <div class="signature-pad--footer">
+                <div class="description">Draw a digit from 0 to 9</div>
+
+                <div class="signature-pad--actions">
+                    <div>
+                        <button type="button" class="btn btn-light" data-action="clear">Clear</button>
+
+                    </div>
+                    <div>
+                        <button id="upload-file-btn" type="button" class="btn btn-primary btn-block">Recognize</button>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+    <script src="../static/js/jquery/jquery.min.js"></script>
+    <script src="../static/js/bootstrap/bootstrap.min.js"></script>
+
+    <script src="../static/js/signature_pad.js"></script>
+    <script src="../static/js/app.js"></script>
+
+    <script>
+        $(function() {
+            $('#upload-file-btn').click(function() {
+                var data = dataURLToBlob(signaturePad.toDataURL());
+                console.log("test");
+                console.log(data);
+                $.ajax({
+                    type: 'POST',
+                    url: '/recognize',
+                    data: data,
+                    processData: false,
+                    contentType: false
+                }).done(function(data) {
+
+                    var json = jQuery.parseJSON(data)
+                    $('#result').html(
+
+                        '<div class="alert alert-success" role="alert">\n' +
+                        '  <h5 class="alert-heading">Result: ' + json.num + '</h5>\n' +
+                        '</div>'
+                    )
+
+                }).fail(function(data) {
+                    console.log('Fail!');
+                });
+            });
+        });
+    </script>
+
+</body>
+
+</html>
